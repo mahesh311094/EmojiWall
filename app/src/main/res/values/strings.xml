@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">EmojiWall</string>
+
+    <string name="icon">Icon</string>
+
+    <string name="Continue">Continue</string>
+    <string name="Retake">Retake</string>
+
+</resources>
