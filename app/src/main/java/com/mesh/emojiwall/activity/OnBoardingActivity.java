@@ -39,7 +39,7 @@ public class OnBoardingActivity extends AppCompatActivity {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 float y = motionEvent.getY();
-                for (int i = 0; i < 5; i++) {
+                for (int i = 0; i < liquidSwipeClipPathProviders.size(); i++) {
                     liquidSwipeClipPathProviders.get(i).setWaveCenterY(y);
                 }
                 return false;

@@ -3,7 +3,37 @@
 
     <string name="icon">Icon</string>
 
+    <string name="start">Get Started</string>
     <string name="Continue">Continue</string>
     <string name="Retake">Retake</string>
+
+    <string name="boarding_title1">Build your wall</string>
+    <string name="boarding_title2">Wall title 2</string>
+    <string name="boarding_title3">Wall title 3</string>
+    <string name="boarding_title4">Wall title 4</string>
+    <string name="boarding_title5">Wall title 5</string>
+
+    <string name="boarding_sub_title1">Boarding sub title 1</string>
+    <string name="boarding_sub_title2">Boarding sub title 2</string>
+    <string name="boarding_sub_title3">Boarding sub title 3</string>
+    <string name="boarding_sub_title4">Boarding sub title 4</string>
+    <string name="boarding_sub_title5">Boarding sub title 5</string>
+
+    <string-array name="on_boarding_titles">
+        <item>@string/boarding_title1</item>
+        <item>@string/boarding_title2</item>
+        <item>@string/boarding_title3</item>
+        <item>@string/boarding_title4</item>
+        <item>@string/boarding_title5</item>
+    </string-array>
+
+    <string-array name="on_boarding_sub_titles">
+        <item>@string/boarding_sub_title1</item>
+        <item>@string/boarding_sub_title2</item>
+        <item>@string/boarding_sub_title3</item>
+        <item>@string/boarding_sub_title4</item>
+        <item>@string/boarding_sub_title5</item>
+    </string-array>
+
 
 </resources>

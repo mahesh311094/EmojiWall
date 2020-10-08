@@ -3,6 +3,18 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+
+    <color name="black">#6B627D</color>
     <color name="white">#ffffff</color>
     <color name="red">#E95758</color>
+    <color name="green">#00897B</color>
+    <color name="orange">#FB8C00</color>
+
+    <array name="on_boarding_colors">
+        <item>@color/white</item>
+        <item>@color/colorAccent</item>
+        <item>@color/orange</item>
+        <item>@color/green</item>
+        <item>@color/colorPrimary</item>
+    </array>
 </resources>

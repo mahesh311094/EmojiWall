@@ -1,7 +1,6 @@
 package com.mesh.emojiwall.adapter;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,26 +22,44 @@ public class OnBoardingAdapter extends PagerAdapter {
     private final Context context;
     private final ArrayList<LiquidSwipeClipPathProvider> liquidSwipeClipPathProviders;
 
-    private static final int[] backgroundColorArray = new int[]{Color.parseColor("#6200EE"), Color.parseColor("#9FD29D"), Color.parseColor("#AFE1F0"), Color.parseColor("#F6D336"), Color.parseColor("#FA796B")};
-    private static final String[] titleArray = new String[]{"Hello fellow developer", "If you like this library", "Then do star it", "And check out my other libraries", "Cheers ^_^"};
+    private final int[] colorArray;
+    private final String[] titleArray, subTitleArray;
 
     public OnBoardingAdapter(Context context, ArrayList<LiquidSwipeClipPathProvider> liquidSwipeClipPathProviders) {
         this.context = context;
         this.liquidSwipeClipPathProviders = liquidSwipeClipPathProviders;
+        this.titleArray = context.getResources().getStringArray(R.array.on_boarding_titles);
+        this.subTitleArray = context.getResources().getStringArray(R.array.on_boarding_sub_titles);
+        this.colorArray = context.getResources().getIntArray(R.array.on_boarding_colors);
     }
 
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
-        View layout = LayoutInflater.from(context).inflate(R.layout.fragment_on_boarding, container, false);
-        layout.setBackgroundColor(backgroundColorArray[position]);
-        TextView tv = layout.findViewById(R.id.fragment_textview);
-        tv.setText(titleArray[position]);
 
-        if(layout instanceof LiquidSwipeLayout) {
+        View layout = LayoutInflater.from(context).inflate(R.layout.fragment_on_boarding, container, false);
+
+        layout.setBackgroundColor(colorArray[position]);
+
+        TextView tvTitle = layout.findViewById(R.id.tvTitle);
+        TextView tvSubTitle = layout.findViewById(R.id.tvSubTitle);
+
+        tvTitle.setText(titleArray[position]);
+        tvSubTitle.setText(subTitleArray[position]);
+
+        if (position == 0) {
+            tvTitle.setTextColor(context.getResources().getColor(R.color.black));
+            tvSubTitle.setTextColor(context.getResources().getColor(R.color.black));
+        } else {
+            tvTitle.setTextColor(context.getResources().getColor(R.color.white));
+            tvSubTitle.setTextColor(context.getResources().getColor(R.color.white));
+        }
+
+        if (layout instanceof LiquidSwipeLayout) {
             LiquidSwipeLayout liquidSwipeLayout = (LiquidSwipeLayout) layout;
             liquidSwipeLayout.setClipPathProvider(liquidSwipeClipPathProviders.get(position));
         }
+
         container.addView(layout);
         return layout;
     }
