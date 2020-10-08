@@ -24,8 +24,7 @@ public class OnBoardingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_on_boarding);
 
-        ViewPager viewpager = findViewById(R.id.viewpager);
-
+        //used for Touch Interactive:
         final ArrayList<LiquidSwipeClipPathProvider> liquidSwipeClipPathProviders = new ArrayList<>();
         liquidSwipeClipPathProviders.add(new LiquidSwipeClipPathProvider());
         liquidSwipeClipPathProviders.add(new LiquidSwipeClipPathProvider());
@@ -33,8 +32,11 @@ public class OnBoardingActivity extends AppCompatActivity {
         liquidSwipeClipPathProviders.add(new LiquidSwipeClipPathProvider());
         liquidSwipeClipPathProviders.add(new LiquidSwipeClipPathProvider());
 
+        //set adapter to view pager
+        ViewPager viewpager = findViewById(R.id.viewpager);
         viewpager.setAdapter(new OnBoardingAdapter(this, liquidSwipeClipPathProviders));
 
+        //animation according to touch event
         viewpager.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {

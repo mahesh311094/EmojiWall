@@ -20,7 +20,7 @@ import java.util.ArrayList;
 public class OnBoardingAdapter extends PagerAdapter {
 
     private final Context context;
-    private final ArrayList<LiquidSwipeClipPathProvider> liquidSwipeClipPathProviders;
+    private final ArrayList<LiquidSwipeClipPathProvider> liquidSwipeClipPathProviders;  //used for Touch Interactive animation
 
     private final int[] colorArray;
     private final String[] titleArray, subTitleArray;
@@ -47,6 +47,7 @@ public class OnBoardingAdapter extends PagerAdapter {
         tvTitle.setText(titleArray[position]);
         tvSubTitle.setText(subTitleArray[position]);
 
+        //first screen title and subtitle color to black other wise white
         if (position == 0) {
             tvTitle.setTextColor(context.getResources().getColor(R.color.black));
             tvSubTitle.setTextColor(context.getResources().getColor(R.color.black));
